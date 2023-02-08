@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_uitoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 17:23:27 by amugnier          #+#    #+#             */
-/*   Updated: 2022/11/28 12:08:37 by amugnier         ###   ########.fr       */
+/*   Created: 2022/11/28 11:44:19 by amugnier          #+#    #+#             */
+/*   Updated: 2022/12/08 18:47:32 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	nb_lenght(int nb)
+static size_t	nb_lenght(unsigned int nb)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
 	if (nb <= 0)
@@ -27,22 +27,17 @@ static size_t	nb_lenght(int nb)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char	*ft_uitoa(unsigned int n)
 {
-	int		len;
-	char	*str;
-	long	nb;
+	unsigned int		len;
+	char				*str;
+	long				nb;
 
 	len = nb_lenght(n);
 	nb = n;
 	str = malloc(sizeof(char) * len + 1);
 	if (!str)
 		return (NULL);
-	if (nb < 0)
-	{
-		str[0] = '-';
-		nb = -nb;
-	}
 	if (nb == 0)
 		str[0] = '0';
 	str[len--] = '\0';

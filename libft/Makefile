@@ -6,7 +6,7 @@
 #    By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/30 17:55:30 by amugnier          #+#    #+#              #
-#    Updated: 2022/12/09 11:34:18 by amugnier         ###   ########.fr        #
+#    Updated: 2023/02/06 11:27:33 by amugnier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS = ft_atoi.c \
 	  ft_isdigit.c \
 	  ft_isprint.c \
 	  ft_itoa.c \
+	  ft_uitoa.c \
 	  ft_memchr.c \
 	  ft_memcmp.c \
 	  ft_memcpy.c \
@@ -48,8 +49,9 @@ SRCS = ft_atoi.c \
 	  ft_substr.c \
 	  ft_tolower.c \
 	  ft_toupper.c \
-
-SRCS_BONUS = ft_lstadd_back.c \
+	  get_next_line.c \
+	  get_next_line_utils.c \
+	  ft_lstadd_back.c \
 	  ft_lstadd_front.c \
 	  ft_lstclear.c \
 	  ft_lstdelone.c \
@@ -58,6 +60,10 @@ SRCS_BONUS = ft_lstadd_back.c \
 	  ft_lstmap.c \
 	  ft_lstnew.c \
 	  ft_lstsize.c \
+	  ft_printf.c \
+	  ft_printf_utils.c \
+	  ft_put_pointer.c \
+	  ft_strstr.c
 
 OBJ = $(SRCS:.c=.o)
 
@@ -67,11 +73,6 @@ FLAGS = -Wall -Werror -Wextra
 
 OPTION = -c
 
-ifeq (bonus, $(findstring bonus, $(MAKECMDGOALS)))
-	SRCS += $(SRCS_BONUS)
-
-endif
-
 .c.o:
 	cc $(FLAGS) $(OPTION) $< -o $(<:.c=.o) -I $(PATH_HEADER)
 
@@ -80,8 +81,6 @@ $(NAME): $(OBJ)
 
 all: $(NAME)
 
-bonus: $(NAME)
-
 clean:
 	rm -f $(OBJ) $(OBJS_BONUS)
 
@@ -89,3 +88,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

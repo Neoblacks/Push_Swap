@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 14:44:57 by amugnier          #+#    #+#             */
-/*   Updated: 2022/11/12 18:59:20 by amugnier         ###   ########.fr       */
+/*   Created: 2023/02/06 11:04:59 by amugnier          #+#    #+#             */
+/*   Updated: 2023/02/06 11:08:11 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_strstr(const char *str, char *comp)
 {
-	size_t	i;
-	char	*str;
+	int	i;
+	int	j;
 
-	i = len;
-	if (s == NULL)
-		return (NULL);
-	if (ft_strlen(s) < start)
+	i = 0;
+	j = 0;
+	if (str[i] == '\0' && comp[j] == '\0')
+		return (EXIT_SUCCESS);
+	while (str[i] != '\0')
 	{
-		str = malloc(sizeof(char));
-		if (!str)
-			return (0);
-		str[0] = '\0';
-		return (str);
+		while (str[i + j] == comp[j] && str[i + j] != '\0' && comp[j] != '\0')
+			j++;
+		if (comp[j] == '\0' && str[i + j] == '\0')
+			return (EXIT_SUCCESS);
+		else
+			j = 0;
+		i++;
 	}
-	if (ft_strlen(s + start) < len)
-		i = ft_strlen(s + start);
-	str = malloc(sizeof(char) * i + 1);
-	if (!str)
-		return (0);
-	ft_strlcpy(str, (s + start), i + 1);
-	return (str);
+	return (EXIT_FAILURE);
 }

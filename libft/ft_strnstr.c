@@ -6,7 +6,7 @@
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:03:24 by amugnier          #+#    #+#             */
-/*   Updated: 2022/11/12 19:19:07 by amugnier         ###   ########.fr       */
+/*   Updated: 2022/12/13 21:26:52 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
-// #include <stdio.h>
-// #include <bsd/string.h>
-
-// int	main(void)
-// {
-// 	printf("%s", ft_strnstr(NULL, "fake", 0));
-// 	printf("%s", strnstr(NULL, "fake", 0));
-// 	return(0);
-// }

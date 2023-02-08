@@ -1,9 +1,0 @@
-// // function possible ?
-
-// 			i--;
-// 			while (i > 0)
-// 			{
-// 				write(2, "Error\n", 6);
-// 				exit(1);
-// 			}
-// 			i--;

@@ -6,44 +6,56 @@
 #    By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 11:33:04 by amugnier          #+#    #+#              #
-#    Updated: 2022/12/09 11:33:22 by amugnier         ###   ########.fr        #
+#    Updated: 2023/02/08 19:03:04 by amugnier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-CC = cc
-FLAGS = -Wall -Wextra -Werror
+PATH_LIBFT = libft
+LIBFT = $(PATH_LIBFT)/libft.a
 
-PATH_LIBFT = libft/
-PATH_SRCS = srcs/
+PATH_SRCS = srcs
 
-
-LIBFT = $(PATH_LIBFT)libft.a
-
-SRCS_P = $(PATH_SRCS)main.c
-
-SRCS = $(SRCS_P)
+SRCS = $(PATH_SRCS)/main.c \
+		 $(PATH_SRCS)/init.c \
+		 $(PATH_SRCS)/stack.c \
+		 $(PATH_SRCS)/push_stack.c \
+		 $(PATH_SRCS)/swap_position.c \
+		 $(PATH_SRCS)/rotate_position.c \
+		 $(PATH_SRCS)/reverse_rotate_position.c \
+		 $(PATH_SRCS)/push_swap.c \
+		 $(PATH_SRCS)/algo.c \
+		 $(PATH_SRCS)/count.c \
+		 $(PATH_SRCS)/movement.c \
+		 $(PATH_SRCS)/position.c \
 
 OBJS = $(SRCS:.c=.o)
 
-all: $(NAME)
+CC = cc
+
+CFLAGS = -Wall -Wextra -Werror
+
+RM = rm -f
+
+all: $(LIBFT) $(NAME)
 
 $(NAME): $(OBJS)
-	@make -C $(PATH_LIBFT)
-	@$(CC) $(FLAGS) -o $(NAME) $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
 
-%.o: %.c
-	@$(CC) $(FLAGS) -c $< -o $@
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I $(PATH_LIBFT) -I $(PATH_SRCS)
+
+$(LIBFT):
+	$(MAKE) -C $(PATH_LIBFT)
 
 clean:
-	@make clean -C $(PATH_LIBFT)
-	@rm -f $(OBJS)
+	$(MAKE) -C $(PATH_LIBFT) clean
+	$(RM) $(OBJS)
 
 fclean: clean
-
-	@make fclean -C $(PATH_LIBFT)
-	@rm -f $(NAME)
+	$(MAKE) -C $(PATH_LIBFT) fclean
+	$(RM) $(NAME)
 
 re: fclean all
 
