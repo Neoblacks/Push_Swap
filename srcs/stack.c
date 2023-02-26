@@ -6,29 +6,29 @@
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:20:39 by amugnier          #+#    #+#             */
-/*   Updated: 2023/02/08 20:03:00 by amugnier         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:39:24 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack	*get_bot_stack(t_stack *stack) //good
+t_stack	*get_bot_stack(t_stack *stack)
 {
 	while (stack && stack->next != NULL)
 		stack = stack->next;
 	return (stack);
 }
 
-t_stack	*get_before_bot_stack(t_stack *stack) //good
+t_stack	*get_before_bot_stack(t_stack *stack)
 {
 	while (stack && stack->next && stack->next->next != NULL)
 		stack = stack->next;
 	return (stack);
 }
 
-t_stack *create_new_stack(int value) //good
+t_stack	*create_new_stack(int value)
 {
-	t_stack *new_stack;
+	t_stack	*new_stack;
 
 	new_stack = malloc(sizeof * new_stack);
 	if (new_stack == NULL)
@@ -43,7 +43,7 @@ t_stack *create_new_stack(int value) //good
 	return (new_stack);
 }
 
-void	add_stack_bot(t_stack **stack, t_stack *new) //good
+void	add_stack_bot(t_stack **stack, t_stack *new)
 {
 	t_stack	*queue;
 
@@ -58,9 +58,9 @@ void	add_stack_bot(t_stack **stack, t_stack *new) //good
 	queue->next = new;
 }
 
-int	ft_get_size_stack(t_stack *stack) //good
+int	ft_get_size_stack(t_stack *stack)
 {
-	int size_stack;
+	int	size_stack;
 
 	size_stack = 0;
 	if (stack == NULL)

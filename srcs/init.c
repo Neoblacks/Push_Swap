@@ -6,17 +6,17 @@
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:30:58 by amugnier          #+#    #+#             */
-/*   Updated: 2023/02/08 16:05:02 by amugnier         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:37:29 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack *ft_init_stack(int argc, char **argv)
+t_stack	*ft_init_stack(int argc, char **argv)
 {
-	t_stack *stack_a;
-	long int number;
-	int i;
+	t_stack		*stack_a;
+	long int	number;
+	int			i;
 
 	stack_a = NULL;
 	number = 0;
@@ -37,9 +37,9 @@ t_stack *ft_init_stack(int argc, char **argv)
 
 void	ft_assign_index(t_stack *stack_a, int size_stack)
 {
-	t_stack *pointer;
-	t_stack *highest;
-	int	i;
+	t_stack	*pointer;
+	t_stack	*highest;
+	int		i;
 
 	while (--size_stack > 0)
 	{
@@ -58,8 +58,8 @@ void	ft_assign_index(t_stack *stack_a, int size_stack)
 			}
 			else
 				pointer = pointer->next;
-	}
-	if (highest != NULL)
-		highest->index = size_stack;
+		}
+		if (highest != NULL)
+			highest->index = size_stack;
 	}
 }

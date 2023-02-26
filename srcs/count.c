@@ -6,7 +6,7 @@
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:46:36 by amugnier          #+#    #+#             */
-/*   Updated: 2023/02/08 18:58:49 by amugnier         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:39:01 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_get_count(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *tmp_a;
-	t_stack *tmp_b;
-	int	size_a;
-	int	size_b;
+	t_stack	*tmp_a;
+	t_stack	*tmp_b;
+	int		size_a;
+	int		size_b;
 
 	tmp_a = *stack_a;
 	tmp_b = *stack_b;
@@ -25,7 +25,7 @@ void	ft_get_count(t_stack **stack_a, t_stack **stack_b)
 	size_b = ft_get_size_stack(tmp_b);
 	while (tmp_b != NULL)
 	{
-		tmp_b->count_b =  tmp_b->position;
+		tmp_b->count_b = tmp_b->position;
 		if (tmp_b->position > size_b / 2)
 			tmp_b->count_b = (size_b - tmp_b->position) * -1;
 		tmp_b->count_a = tmp_b->targ_pos;
@@ -44,12 +44,12 @@ int	nb_abs(int nb)
 	return (nb);
 }
 
-void ft_do_not_much_move(t_stack **stack_a, t_stack **stack_b)
+void	ft_do_not_much_move(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *tmp;
-	int	not_much;
-	int count_a;
-	int count_b;
+	t_stack	*tmp;
+	int		not_much;
+	int		count_a;
+	int		count_b;
 
 	tmp = *stack_b;
 	not_much = INT_MAX;

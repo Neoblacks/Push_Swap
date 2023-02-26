@@ -6,13 +6,13 @@
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:05:21 by amugnier          #+#    #+#             */
-/*   Updated: 2023/02/08 20:07:40 by amugnier         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:36:27 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_is_sorted(t_stack *stack) //good
+int	ft_is_sorted(t_stack *stack)
 {
 	while (stack->next != NULL)
 	{
@@ -23,7 +23,7 @@ int	ft_is_sorted(t_stack *stack) //good
 	return (1);
 }
 
-void	ft_push_swap(t_stack **stack_a, t_stack **stack_b, int size_stack) //good
+void	ft_push_swap(t_stack **stack_a, t_stack **stack_b, int size_stack)
 {
 	if (size_stack == 2 && !ft_is_sorted(*stack_a))
 		ft_do_sa(stack_a);

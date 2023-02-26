@@ -6,13 +6,14 @@
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:59:42 by amugnier          #+#    #+#             */
-/*   Updated: 2023/02/08 20:16:26 by amugnier         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:41:06 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_do_rev_rotate_both_position(t_stack **stack_a, t_stack **stack_b, int *count_a, int *count_b) //good
+void	ft_do_rev_rotate_both_position(t_stack **stack_a, t_stack **stack_b,
+	int *count_a, int *count_b)
 {
 	while (*count_a < 0 && *count_b < 0)
 	{
@@ -22,7 +23,8 @@ void	ft_do_rev_rotate_both_position(t_stack **stack_a, t_stack **stack_b, int *c
 	}
 }
 
-void	ft_do_rotate_both_position(t_stack **stack_a, t_stack **stack_b, int *count_a, int *count_b)
+void	ft_do_rotate_both_position(t_stack **stack_a, t_stack **stack_b,
+	int *count_a, int *count_b)
 {
 	while (*count_a > 0 && *count_b > 0)
 	{
@@ -32,7 +34,7 @@ void	ft_do_rotate_both_position(t_stack **stack_a, t_stack **stack_b, int *count
 	}
 }
 
-void 	ft_do_rotate_stack_a(t_stack **stack_a, int *count) //good
+void	ft_do_rotate_stack_a(t_stack **stack_a, int *count)
 {
 	while (*count)
 	{
@@ -49,7 +51,7 @@ void 	ft_do_rotate_stack_a(t_stack **stack_a, int *count) //good
 	}
 }
 
-void 	ft_do_rotate_stack_b(t_stack **stack_b, int *count) //good
+void	ft_do_rotate_stack_b(t_stack **stack_b, int *count)
 {
 	while (*count)
 	{
@@ -66,7 +68,8 @@ void 	ft_do_rotate_stack_b(t_stack **stack_b, int *count) //good
 	}
 }
 
-void 	ft_do_move(t_stack **stack_a, t_stack **stack_b, int count_a, int count_b)
+void	ft_do_move(t_stack **stack_a, t_stack **stack_b,
+	int count_a, int count_b)
 {
 	if (count_a < 0 && count_b < 0)
 		ft_do_rev_rotate_both_position(stack_a, stack_b, &count_a, &count_b);

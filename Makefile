@@ -6,7 +6,7 @@
 #    By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 11:33:04 by amugnier          #+#    #+#              #
-#    Updated: 2023/02/08 19:03:04 by amugnier         ###   ########.fr        #
+#    Updated: 2023/02/26 11:42:53 by amugnier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,8 @@ SRCS = $(PATH_SRCS)/main.c \
 		 $(PATH_SRCS)/count.c \
 		 $(PATH_SRCS)/movement.c \
 		 $(PATH_SRCS)/position.c \
+		 $(PATH_SRCS)/end.c \
+		 $(PATH_SRCS)/utils.c
 
 OBJS = $(SRCS:.c=.o)
 

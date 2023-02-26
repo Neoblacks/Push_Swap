@@ -6,13 +6,13 @@
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:04:43 by amugnier          #+#    #+#             */
-/*   Updated: 2023/02/08 20:13:16 by amugnier         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:41:35 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_get_position(t_stack **stack) //good
+void	ft_get_position(t_stack **stack)
 {
 	t_stack	*tmp;
 	int		i;
@@ -27,9 +27,9 @@ void	ft_get_position(t_stack **stack) //good
 	}
 }
 
-int	ft_get_lowest_pos_index(t_stack **stack) //good
+int	ft_get_lowest_pos_index(t_stack **stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 	int		lowest_index;
 	int		lowest_position;
 
@@ -49,9 +49,10 @@ int	ft_get_lowest_pos_index(t_stack **stack) //good
 	return (lowest_position);
 }
 
-int	ft_get_targ(t_stack **stack_a, int index_b, int index_target, int pos_target) //good
+int	ft_get_targ(t_stack **stack_a, int index_b,
+	int index_target, int pos_target)
 {
-	t_stack *tmp_a;
+	t_stack	*tmp_a;
 
 	tmp_a = *stack_a;
 	while (tmp_a != NULL)
@@ -78,9 +79,9 @@ int	ft_get_targ(t_stack **stack_a, int index_b, int index_target, int pos_target
 	return (pos_target);
 }
 
-void ft_get_targ_pos(t_stack **a, t_stack **b) //good
+void	ft_get_targ_pos(t_stack **a, t_stack **b)
 {
-	t_stack *tmp_b;
+	t_stack	*tmp_b;
 	int		pos_target;
 
 	tmp_b = *b;
