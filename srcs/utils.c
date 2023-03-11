@@ -6,7 +6,7 @@
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 11:42:30 by amugnier          #+#    #+#             */
-/*   Updated: 2023/03/10 10:57:45 by amugnier         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:59:46 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_args_nb(char *argv)
 	if (nb > INT_MAX || nb < INT_MIN)
 		return (0);
 	i = 0;
-	if (ft_is_sign(argv[i]) && argv[i + 1] != '\0')
+	if ((ft_is_sign(argv[i]) && argv[i + 1] != '\0') || argv[i] == '\0')
 		i++;
 	while (argv[i] && ft_isdigit(argv[i]) == 1)
 		i++;
