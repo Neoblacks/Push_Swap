@@ -6,16 +6,16 @@
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 10:44:07 by amugnier          #+#    #+#             */
-/*   Updated: 2022/11/09 12:23:38 by amugnier         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:20:08 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
-	int	nb;
-	int	negatif;
+	long long	nb;
+	int			negatif;
 
 	negatif = 1;
 	nb = 0;

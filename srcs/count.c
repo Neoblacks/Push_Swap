@@ -6,11 +6,21 @@
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:46:36 by amugnier          #+#    #+#             */
-/*   Updated: 2023/02/20 14:39:01 by amugnier         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:10:48 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+/*
+	Calculates the "count" values for the elements of stack_b.
+	These values are used to determine the best moves to make in
+	the sorting algorithm. It calculates the number of moves needed to move
+	an element from its current position to the top of stack_a and the number
+	of moves needed to move an element from its current position to its target
+	position on stack_a. It then stores these values in the "count_a" and
+	"count_b" fields of each element in stack_b.
+*/
 
 void	ft_get_count(t_stack **stack_a, t_stack **stack_b)
 {
@@ -34,8 +44,6 @@ void	ft_get_count(t_stack **stack_a, t_stack **stack_b)
 		tmp_b = tmp_b->next;
 	}
 }
-
-//nb_abs function
 
 int	nb_abs(int nb)
 {

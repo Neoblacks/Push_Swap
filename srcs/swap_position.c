@@ -6,11 +6,17 @@
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:03 by amugnier          #+#    #+#             */
-/*   Updated: 2023/02/20 14:36:24 by amugnier         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:08:02 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+/*
+	Swaps the position of the top two elements of a stack by swapping their
+	values and indices. If the stack is empty or only contains one element,
+	nothing happens.
+*/
 
 void	ft_swap_position(t_stack *stack)
 {

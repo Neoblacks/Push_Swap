@@ -6,7 +6,7 @@
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 11:42:30 by amugnier          #+#    #+#             */
-/*   Updated: 2023/02/26 11:45:06 by amugnier         ###   ########.fr       */
+/*   Updated: 2023/03/10 10:57:45 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,15 @@
 
 int	ft_nb_compare(const char *s1, const char *s2)
 {
-	int	i;
-	int	j;
+	long long	nb_i;
+	long long	nb_j;
 
-	i = 0;
-	j = i;
-	if (s1[i] == '+')
-	{
-		if (s2[j] != '+')
-			i++;
-	}
+	nb_i = ft_atoi(s1);
+	nb_j = ft_atoi(s2);
+	if (nb_i == nb_j)
+		return (0);
 	else
-	{
-		if (s2[j] == '+')
-			j++;
-	}
-	while (s1[i] != '\0' && s2[j] != '\0' && s1[i] == s2[j])
-	{
-		i++;
-		j++;
-	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[j]);
+		return (1);
 }
 
 int	ft_multiple_nb(char **argv)
@@ -59,18 +47,21 @@ int	ft_multiple_nb(char **argv)
 
 int	ft_args_nb(char *argv)
 {
-	int	i;
+	int			i;
+	long long	nb;
 
+	nb = ft_atoi(argv);
+	if (ft_strlen(argv) > 11)
+		return (0);
+	if (nb > INT_MAX || nb < INT_MIN)
+		return (0);
 	i = 0;
 	if (ft_is_sign(argv[i]) && argv[i + 1] != '\0')
 		i++;
 	while (argv[i] && ft_isdigit(argv[i]) == 1)
 		i++;
 	if (argv[i] != '\0' && ft_isdigit(argv[i]) == 0)
-	{
-		write(1, "Debug\n", 6);
 		return (0);
-	}
 	return (1);
 }
 
@@ -103,12 +94,8 @@ int	ft_check_args(char **argv)
 		i++;
 	}
 	if (nb_of_zero > 1)
-	{
 		return (0);
-	}
 	if (ft_multiple_nb(argv))
-	{
 		return (0);
-	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 11:52:52 by amugnier          #+#    #+#             */
-/*   Updated: 2023/02/26 11:42:26 by amugnier         ###   ########.fr       */
+/*   Updated: 2023/03/09 13:38:51 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 		return (1);
 	if (ft_check_args(argv) == 0)
 	{
-		ft_putstr_fd("Error : Arguments are not valid or not unique !\n", 2);
+		ft_putstr_fd("Error\n", 2);
 		return (1);
 	}
 	stack_b = NULL;

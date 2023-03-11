@@ -6,16 +6,22 @@
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:30:58 by amugnier          #+#    #+#             */
-/*   Updated: 2023/02/20 14:37:29 by amugnier         ###   ########.fr       */
+/*   Updated: 2023/03/10 10:59:01 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/*
+	Initializes a stack with integer values passed as command line arguments.
+	It creates a new stack if the argument count is 1 and adds new elements to
+	the bottom of the stack otherwise.
+*/
+
 t_stack	*ft_init_stack(int argc, char **argv)
 {
 	t_stack		*stack_a;
-	long int	number;
+	long		number;
 	int			i;
 
 	stack_a = NULL;
@@ -24,8 +30,6 @@ t_stack	*ft_init_stack(int argc, char **argv)
 	while (i < argc)
 	{
 		number = ft_atoi(argv[i]);
-		if (number > INT_MAX || number < INT_MIN)
-			ft_printf("Error INT MAX OU INT MIN DEPASSE\n");
 		if (i == 1)
 			stack_a = create_new_stack(number);
 		else
@@ -35,6 +39,13 @@ t_stack	*ft_init_stack(int argc, char **argv)
 	return (stack_a);
 }
 
+/*
+	Assigns indices to the elements of a stack in descending order based on
+	their values. It starts by finding the highest unindexed value and
+	assigns the highest index to it, then moves on to the next highest
+	unindexed value and continues the process
+	until all elements have been indexed.
+*/
 void	ft_assign_index(t_stack *stack_a, int size_stack)
 {
 	t_stack	*pointer;

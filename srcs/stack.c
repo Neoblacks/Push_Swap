@@ -6,11 +6,16 @@
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:20:39 by amugnier          #+#    #+#             */
-/*   Updated: 2023/02/20 14:39:24 by amugnier         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:07:10 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+/*
+	Returns the last element of a stack. It traverses the stack
+	until it reaches the last element and returns a pointer to it
+*/
 
 t_stack	*get_bot_stack(t_stack *stack)
 {
@@ -18,6 +23,12 @@ t_stack	*get_bot_stack(t_stack *stack)
 		stack = stack->next;
 	return (stack);
 }
+
+/*
+	Returns the second-to-last element of a stack. It traverses the stack until
+	it reaches the element just before the last element and
+	returns a pointer to it.
+*/
 
 t_stack	*get_before_bot_stack(t_stack *stack)
 {
@@ -42,6 +53,12 @@ t_stack	*create_new_stack(int value)
 	new_stack->next = NULL;
 	return (new_stack);
 }
+
+/*
+	Adds a new element to the bottom of a stack. If the stack is empty, it
+	creates a new stack with the element, otherwise it finds the current last
+	element of the stack and sets its "next" pointer to the new element.
+*/
 
 void	add_stack_bot(t_stack **stack, t_stack *new)
 {

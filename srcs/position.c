@@ -6,11 +6,15 @@
 /*   By: amugnier <amugnier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:04:43 by amugnier          #+#    #+#             */
-/*   Updated: 2023/02/20 14:41:35 by amugnier         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:43:44 by amugnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+/*
+	Assigns a position value to each node in the linked list stack.
+*/
 
 void	ft_get_position(t_stack **stack)
 {
@@ -26,6 +30,11 @@ void	ft_get_position(t_stack **stack)
 		i++;
 	}
 }
+
+/*
+	Returns the position of the node with the lowest index value in
+	the linked list stack.
+*/
 
 int	ft_get_lowest_pos_index(t_stack **stack)
 {
@@ -48,6 +57,11 @@ int	ft_get_lowest_pos_index(t_stack **stack)
 	}
 	return (lowest_position);
 }
+
+/*
+	Returns the position of the node with the index value closest to
+	and greater than index_b but less than index_target.
+*/
 
 int	ft_get_targ(t_stack **stack_a, int index_b,
 	int index_target, int pos_target)
@@ -78,6 +92,11 @@ int	ft_get_targ(t_stack **stack_a, int index_b,
 	}
 	return (pos_target);
 }
+
+/*
+	Assigns a target position value to each node in linked list b based
+	on its index value and the index values of nodes in linked list a.
+*/
 
 void	ft_get_targ_pos(t_stack **a, t_stack **b)
 {
